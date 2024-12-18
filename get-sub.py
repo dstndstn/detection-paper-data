@@ -3,7 +3,7 @@ from astrometry.util.fits import fits_table
 import numpy as np
 import os
 
-T = fits_table('survey-ccds-snx3-25.kd.fits')
+T = fits_table('survey-ccds-snx3-25.fits')
 for fn in np.unique(T.image_filename):
     I = np.flatnonzero(T.image_filename == fn)
     print(len(I), 'ext for', fn)
@@ -19,3 +19,6 @@ for fn in np.unique(T.image_filename):
         cmd = 'fitsgetext -i %s -o %s -e 0 %s' % (infn, outfn, exts)
         print(cmd)
         os.system(cmd)
+
+    T.image_hdu[I] = 1 + np.arange(len(I))
+T.writeto('survey-ccds-snx3-25-sub.fits')

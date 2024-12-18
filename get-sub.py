@@ -11,8 +11,8 @@ for fn in np.unique(T.image_filename):
     exts = ' '.join(['-e %i' % e for e in T.image_hdu[I]])
     for rep in ['_ooi_', '_oow_', '_ood_']:
         fnx = fn.replace('_ooi_', rep)
-        infn = os.path.join('images', fnx)
-        outfn = os.path.join('images-sub', fnx)
+        infn = os.path.join('images-full', fnx)
+        outfn = os.path.join('images', fnx)
         outdir = os.path.dirname(outfn)
         if not os.path.exists(outdir):
             os.makedirs(outdir)

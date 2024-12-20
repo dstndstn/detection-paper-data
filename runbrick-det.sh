@@ -4,8 +4,8 @@
 
 export COSMO=/dvs_ro/cfs/cdirs/cosmo
 
-export LEGACY_SURVEY_DIR=$COSMO/work/legacysurvey/dr11
-#export LEGACY_SURVEY_DIR=/global/homes/d/dstn/detection-paper/survey-dir
+#export LEGACY_SURVEY_DIR=$COSMO/work/legacysurvey/dr11
+export LEGACY_SURVEY_DIR=/global/cfs/cdirs/cosmo/work/users/dstn/detection-survey-dir
 outdir=$SCRATCH/detection
 
 export GAIA_CAT_DIR=$COSMO/data/gaia/dr3/healpix
